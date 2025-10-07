@@ -1,0 +1,14 @@
+{
+  "name": "work-queues",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "worker": "node worker.js",
+    "new-task": "node new_task.js",
+    "send-messages": "bash -lc 'for i in $(seq 1 10); do dots=$(printf \".%.0s\" $(seq 1 $i)); node new_task.js \"message$i\" \"$dots\"; done'"
+  },
+  "dependencies": {
+    "amqplib": "^0.10.9"
+  }
+}
